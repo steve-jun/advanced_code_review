@@ -25,10 +25,8 @@ Node* Node::InsertPreviousNode(char data) {
 	Node* node = new Node(data);
 	node->prev = this->prev;
 	node->next = this;
-	if (this->prev) {
+	if (this->prev)
 		this->prev->next = node;
-		this->prev = node;
-	}
 	this->prev = node;
 	return node;
 }
@@ -37,10 +35,8 @@ Node* Node::InsertNextNode(char data) {
 	Node* node = new Node(data);
 	node->prev = this;
 	node->next = this->next;
-	if (this->next) {
+	if (this->next)
 		this->next->prev = node;
-		this->next = node;
-	}
 	this->next = node;
 	return node;
 }
